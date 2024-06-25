@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHeath: 3
+  slimeDeathVFX: {fileID: 8160030607901063818, guid: 50373a09b5a0ae34f98fe6770597b78f, type: 3}
 --- !u!114 &8202730573613054627
 MonoBehaviour:
   m_ObjectHideFlags: 0

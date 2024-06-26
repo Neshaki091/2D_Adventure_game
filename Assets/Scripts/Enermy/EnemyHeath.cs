@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHeath : MonoBehaviour
 {
     [SerializeField] private int startHeath = 3;
+    [SerializeField] private GameObject slimeDeathVFX;
+
     private int currentHeath;
     private KnockBack knockBack;
     private Flash flash;
@@ -27,6 +29,7 @@ public class EnemyHeath : MonoBehaviour
     {
         if (currentHeath <= 0)
         {
+            Instantiate(slimeDeathVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

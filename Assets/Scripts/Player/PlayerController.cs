@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
     public static PlayerController Instance;
-    [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] private float dashSpeed = 4f;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float dashSpeed;
     [SerializeField] private TrailRenderer myTrailRenderer;
     private PlayerControls playerControls;
     private Vector2 moverment;
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         float dashTime = .2f;
         float dashCD = .25f;
         yield return new WaitForSeconds(dashTime);
-        moveSpeed /= dashSpeed;
+        moveSpeed -= dashSpeed;
         myTrailRenderer.emitting = false;
         yield return new WaitForSeconds(dashCD);
         isDashing = false;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sword : MonoBehaviour
@@ -7,11 +8,13 @@ public class Sword : MonoBehaviour
     [SerializeField] private GameObject slashAniPrefab;
     [SerializeField] private Transform slashSpawmPoint;
     [SerializeField] private GameObject WeaponCollider;
+    [SerializeField] private float SAttackcooldown = .5f;
 
     private PlayerControls playerControls;
     private Animator myAnimator;
     private PlayerController playerController;
     private ActiveWeapon activeWeapon;
+    private bool attackButtonDown, isAttacking = false;
 
     private GameObject slashAni;
     private void Awake()
@@ -29,19 +32,40 @@ public class Sword : MonoBehaviour
    
     void Start()
     {
-        playerControls.Combat.Attack.started += _ => Attack();
+        playerControls.Combat.Attack.started += _ => StartAttack();
+        playerControls.Combat.Attack.canceled += _ => StopAttack();
     }
     private void Update()
     {
         MouseFollowingOffset();
+        Attack();
+    }
+    private void StartAttack()
+    {
+        attackButtonDown = true;
+    }
+
+    private void StopAttack()
+    {
+        attackButtonDown = false;
     }
     private void Attack()
     {
-        myAnimator.SetTrigger("Attack");
-        WeaponCollider.gameObject.SetActive(true);
+        if (attackButtonDown && !isAttacking)
+        {
+            isAttacking = true;
+            myAnimator.SetTrigger("Attack");
+            WeaponCollider.gameObject.SetActive(true);
 
-        slashAni = Instantiate(slashAniPrefab, slashSpawmPoint.position, Quaternion.identity);
-        slashAni.transform.parent = this.transform.parent;
+            slashAni = Instantiate(slashAniPrefab, slashSpawmPoint.position, Quaternion.identity);
+            slashAni.transform.parent = this.transform.parent;
+            StartCoroutine(AttackCDRoutine());
+        }
+    }
+    private IEnumerator AttackCDRoutine()
+    {
+        yield return new WaitForSeconds(SAttackcooldown);
+        isAttacking = false;
     }
     public void DoneAttack()
     {

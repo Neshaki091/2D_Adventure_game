@@ -4,10 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 //LUYENDDBDBDB
-public class PlayerController : MonoBehaviour
+public class PlayerController : SingleTon<PlayerController>
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
-    public static PlayerController Instance;
+    
     [SerializeField] private float moveSpeed;
     [SerializeField] private float dashSpeed;
     [SerializeField] private TrailRenderer myTrailRenderer;
@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
     private bool facingLeft = false;
     private bool isDashing = false;
-    private void Awake()
-    {
-        Instance = this;
+    protected override void Awake() 
+    {  
+        base.Awake(); 
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();

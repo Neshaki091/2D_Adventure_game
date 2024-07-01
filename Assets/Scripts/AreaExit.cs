@@ -15,6 +15,7 @@ public class AreaExit : MonoBehaviour
         if (other.gameObject.GetComponent<PlayerController>())
         {
             SceneManagerment.Instance.SetTransitionName(sceneTransitionName);
+            UIFade.Instance.FadeToBlack();
             StartCoroutine(LoadSceneRoutine());
         }
     }

@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.21593, y: -0.99961996, z: -10}
+  m_LocalPosition: {x: -8.226145, y: -0.99961996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1089,7 +1089,6 @@ PolygonCollider2D:
       - {x: -29.997929, y: 19.99718}
       - {x: -29.99999, y: -8.999897}
       - {x: 6.002258, y: -8.999456}
-      - {x: 5.9997435, y: 19.998808}
   m_UseDelaunayMesh: 0
 --- !u!1 &1401749320
 GameObject:

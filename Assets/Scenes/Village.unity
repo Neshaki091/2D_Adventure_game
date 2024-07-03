@@ -424,6 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea3c06c8890ef664fb058ba55b58726c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentActiveWeapon: {fileID: 1900593014}
 --- !u!1 &797977981
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,8 +995,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0061499756, y: -0.22932982}
-  m_Size: {x: 0.662953, y: 0.530104}
+  m_Offset: {x: 0.05227027, y: -0.24827704}
+  m_Size: {x: 0.5461144, y: 0.41010892}
   m_Direction: 1
 --- !u!210 &1385728229
 SortingGroup:

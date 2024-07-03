@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bow : MonoBehaviour, IWeapon
+public class Bow : MonoBehaviour
 {
     public void Attack()
     {

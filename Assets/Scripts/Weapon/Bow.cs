@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bow : MonoBehaviour, IWeapon
 {
+    [SerializeField] private WeaponInfo weaponInfo;
     private void Update()
     {
         MouseFollowWithOffset();
@@ -11,7 +12,11 @@ public class Bow : MonoBehaviour, IWeapon
     public void Attack()
     {
         Debug.Log("Bow Attack");
-        ActiveWeapon.Instance.ToggleIsAttacking(false); 
+        
+    }
+    public WeaponInfo GetWeaponInfo()
+    {
+        return weaponInfo;
     }
     private void MouseFollowWithOffset()
     {

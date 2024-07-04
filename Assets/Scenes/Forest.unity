@@ -5061,6 +5061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 697678736}
   - component: {fileID: 697678737}
+  - component: {fileID: 697678738}
   m_Layer: 0
   m_Name: Active Weapon
   m_TagString: Untagged
@@ -5095,6 +5096,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea3c06c8890ef664fb058ba55b58726c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &697678738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697678735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7300c6c7eb8fe9849a49db835d5f3416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &720283074

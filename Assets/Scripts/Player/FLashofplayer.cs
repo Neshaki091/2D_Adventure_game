@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flash : MonoBehaviour
+public class Flashofplayer : MonoBehaviour
 {
     [SerializeField] private Material WhiteFlashMat;
     [SerializeField] private float restoreDefaultTime = .2f;
@@ -13,7 +13,7 @@ public class Flash : MonoBehaviour
 
     private void Awake()
     {
-        enemyHeath = GetComponent<EnemyHeath>();    
+        enemyHeath = GetComponent<EnemyHeath>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         defaultMat = spriteRenderer.material;
     }
@@ -23,6 +23,6 @@ public class Flash : MonoBehaviour
         spriteRenderer.material = WhiteFlashMat;
         yield return new WaitForSeconds(restoreDefaultTime);
         spriteRenderer.material = defaultMat;
-        enemyHeath.detectDeath();
+
     }
 }

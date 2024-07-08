@@ -11,11 +11,11 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     private bool canTakeDamage = true;
     private KnockBack knockback;
-    private Flash flash;
+    private Flashofplayer flash;
          void Awake()
     {
 
-        flash = GetComponent<Flash>();
+        flash = GetComponent<Flashofplayer>();
         knockback = GetComponent<KnockBack>();
     }
     private void Start()

@@ -24,6 +24,12 @@ public class EnemyHeath : MonoBehaviour
         currentHeath -= Damage;
         knockBack.getKnockBack(PlayerController.Instance.transform, 15f);
         StartCoroutine(flash.FlashRoutine());
+        StartCoroutine(CheckDetectDeathRoutine());
+    }
+    private IEnumerator CheckDetectDeathRoutine()
+    {
+        yield return new WaitForSeconds(flash.GetRestoreMatTime());
+        detectDeath();
     }
     public void detectDeath()
     {

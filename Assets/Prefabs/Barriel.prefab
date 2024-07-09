@@ -148,3 +148,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldCoin: {fileID: 4281050051197723832, guid: ce127854c699a3649ba9d1a11daa23d3, type: 3}
+  healthGlobe: {fileID: 4281050051197723832, guid: bd9e33d422810ee4fb9c16d1d1ed3226, type: 3}
+  staminaGlobe: {fileID: 4281050051197723832, guid: 6e859954ab59b2246b1324c3265c6e81, type: 3}

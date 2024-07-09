@@ -38,6 +38,14 @@ public class PlayerHealth : SingleTon <PlayerHealth>
             
         }
     }
+    public void HealPlayer()
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += 1;
+            
+        }
+    }
     private void TakeDamge(int damageAmount)
     { if(!canTakeDamage) { return;  }
         canTakeDamage = false;

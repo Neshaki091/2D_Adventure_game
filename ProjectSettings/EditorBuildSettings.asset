@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Maze.unity
-    guid: 891ba3c251889db4f89f139aa1266c10
+    path: Assets/Scenes/Main Menu.unity
+    guid: b340d28272511fa4c90f8f50cc553537
+  - enabled: 1
+    path: Assets/Scenes/Village.unity
+    guid: 3fd66361e91abb34ea12adb43a98f901
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: 9fa0f3f99c587b64f87379b8d2dcb34e
   - enabled: 1
-    path: Assets/Scenes/Village.unity
-    guid: 3fd66361e91abb34ea12adb43a98f901
+    path: Assets/Scenes/Maze.unity
+    guid: 891ba3c251889db4f89f139aa1266c10
   m_configObjects: {}

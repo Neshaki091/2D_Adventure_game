@@ -5,15 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerHealth : SingleTon <PlayerHealth>
 {
-    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private int maxHealth = 10;
+    [SerializeField] private int maxMana = 20;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
    
     private Slider healthSlider;
+    private Slider manaSlider;
     private int currentHealth;
     private bool canTakeDamage = true;
     private KnockBack knockback;
     private Flashofplayer flash;
+    private Rigidbody2D rb;
+
+    public int currentMana;
+
     protected override void Awake()
     {
         base.Awake();
@@ -26,7 +32,9 @@ public class PlayerHealth : SingleTon <PlayerHealth>
     {
         
         currentHealth = maxHealth;
+        currentMana = maxMana;
         updateHealthSlider();
+        updateManaSlider();
     }
     private void OnCollisionStay2D(Collision2D other)
     {
@@ -35,7 +43,8 @@ public class PlayerHealth : SingleTon <PlayerHealth>
         if (enemy &&canTakeDamage)
         {
             TakeDamge(1);
-            
+            knockback.getKnockBack(other.gameObject.transform, knockBackThrustAmount);
+
         }
     }
     public void HealPlayer()
@@ -43,16 +52,31 @@ public class PlayerHealth : SingleTon <PlayerHealth>
         if (currentHealth < maxHealth)
         {
             currentHealth += 1;
-            
+            updateHealthSlider();
+        }
+    }
+    public void HealMana()
+    {
+        if (currentMana < maxMana)
+        {
+            currentMana += 4;
+            if (currentMana > maxMana) { currentMana = maxMana; }
+            updateManaSlider();
         }
     }
     private void TakeDamge(int damageAmount)
     { if(!canTakeDamage) { return;  }
         canTakeDamage = false;
         currentHealth -= damageAmount;
+        StartCoroutine(flash.FlashRoutine());
         StartCoroutine(DamageRecoveryRoutine());
         updateHealthSlider();
         checkIfplayerDeath();
+    }
+    public void useMana()
+    {
+        currentMana -= 1;
+        updateManaSlider();
     }
     private void checkIfplayerDeath()
     {
@@ -76,5 +100,14 @@ public class PlayerHealth : SingleTon <PlayerHealth>
         }
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+    }
+    private void updateManaSlider()
+    {
+        if (manaSlider == null)
+        {
+            manaSlider = GameObject.Find("Mana Slider").GetComponent<Slider>();
+        }
+        manaSlider.maxValue = maxMana;
+        manaSlider.value = currentMana;
     }
 }

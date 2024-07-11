@@ -10,6 +10,7 @@ public class EnemyHeath : MonoBehaviour
     private int currentHeath;
     private KnockBack knockBack;
     private Flash flash;
+    private PlayerHealth health;
     private void Awake()
     {
         flash = GetComponent<Flash>();
@@ -35,6 +36,7 @@ public class EnemyHeath : MonoBehaviour
     {
         if (currentHeath <= 0)
         {
+            GetComponent<Pickupspawner>().DropItems();
             Instantiate(slimeDeathVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

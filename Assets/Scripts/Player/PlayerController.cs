@@ -12,6 +12,7 @@ public class PlayerController : SingleTon<PlayerController>
     [SerializeField] private float dashSpeed;
     [SerializeField] private TrailRenderer myTrailRenderer;
     [SerializeField] private Transform weaponCollider;
+
     private PlayerControls playerControls;
     private Vector2 moverment;
     Rigidbody2D rb;
@@ -20,6 +21,7 @@ public class PlayerController : SingleTon<PlayerController>
     private KnockBack knockBack;
     private bool facingLeft = false;
     private bool isDashing = false;
+    private PlayerHealth health;
     protected override void Awake() 
     {  
         base.Awake(); 
@@ -28,6 +30,7 @@ public class PlayerController : SingleTon<PlayerController>
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         knockBack = GetComponent<KnockBack>();  
+        health = GetComponent<PlayerHealth>();
     }
     private void Start()
     {
@@ -77,14 +80,17 @@ public class PlayerController : SingleTon<PlayerController>
         }
     }
     private void Dash() {
-        if (!isDashing)
+        if (!isDashing && health.currentMana > 0)
         {
+            health.useMana();
             isDashing = true;
             moveSpeed += dashSpeed;
             myTrailRenderer.emitting = true;
             StartCoroutine(EndDashRoutine());
+            
         }
     }
+
     private IEnumerator EndDashRoutine()
     {
         float dashTime = .2f;

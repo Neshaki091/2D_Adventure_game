@@ -80,13 +80,14 @@ public class PlayerController : SingleTon<PlayerController>
         }
     }
     private void Dash() {
-        if (!isDashing && health.currentMana > 0)
+        if (!isDashing && health.canUseMana)
         {
-            health.useMana();
             isDashing = true;
             moveSpeed += dashSpeed;
             myTrailRenderer.emitting = true;
+            health.UseMana();
             StartCoroutine(EndDashRoutine());
+            
             
         }
     }

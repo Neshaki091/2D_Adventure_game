@@ -5,19 +5,22 @@ using UnityEngine.UI;
 
 public class PlayerHealth : SingleTon <PlayerHealth>
 {
+    public bool canUseMana { get { return true; } set { useMana = value; } }
+
     [SerializeField] private int maxHealth = 10;
     [SerializeField] private int maxMana = 20;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
    
     private Slider healthSlider;
+    private Slider manaSlider;
     private int currentHealth;
+    private int currentMana;
     private bool canTakeDamage = true;
     private KnockBack knockback;
     private Flashofplayer flash;
     private Rigidbody2D rb;
-
-
+    private bool useMana;
     protected override void Awake()
     {
         base.Awake();
@@ -71,10 +74,19 @@ public class PlayerHealth : SingleTon <PlayerHealth>
         updateHealthSlider();
         checkIfplayerDeath();
     }
-    public void useMana()
+    public void UseMana()
     {
-        currentMana -= 1;
-        updateManaSlider();
+        if (currentMana > 0)
+        {
+            useMana = true;
+            currentMana -= 1;
+            updateManaSlider();
+        }
+        else
+        {
+            useMana = false;
+        }
+        
     }
     private void checkIfplayerDeath()
     {
@@ -101,6 +113,10 @@ public class PlayerHealth : SingleTon <PlayerHealth>
     }
     private void updateManaSlider()
     {
+        if (manaSlider == null)
+        {
+            manaSlider = GameObject.Find("Mana Slider").GetComponent<Slider>();
+        }
         manaSlider.maxValue = maxMana;
         manaSlider.value = currentMana;
     }

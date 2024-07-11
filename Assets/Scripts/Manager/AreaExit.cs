@@ -7,7 +7,6 @@ public class AreaExit : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad;
     [SerializeField] private string sceneTransitionName;
-
     private float waitToLoadTime = 1f;
 
     private void OnTriggerEnter2D(Collider2D other)

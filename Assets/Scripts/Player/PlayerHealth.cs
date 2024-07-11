@@ -11,14 +11,12 @@ public class PlayerHealth : SingleTon <PlayerHealth>
     [SerializeField] private float damageRecoveryTime = 1f;
    
     private Slider healthSlider;
-    private Slider manaSlider;
     private int currentHealth;
     private bool canTakeDamage = true;
     private KnockBack knockback;
     private Flashofplayer flash;
     private Rigidbody2D rb;
 
-    public int currentMana;
 
     protected override void Awake()
     {
@@ -103,10 +101,6 @@ public class PlayerHealth : SingleTon <PlayerHealth>
     }
     private void updateManaSlider()
     {
-        if (manaSlider == null)
-        {
-            manaSlider = GameObject.Find("Mana Slider").GetComponent<Slider>();
-        }
         manaSlider.maxValue = maxMana;
         manaSlider.value = currentMana;
     }

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 107
+  controlID: 98
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 367.19995
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 52
+  controlID: 44
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 53
+  controlID: 45
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -567,7 +567,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -575,16 +575,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 78
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Prefabs
   m_LastFoldersGridSize: 78
   m_LastProjectPath: D:\unity project\2D Andventure
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 395}
-    m_SelectedIDs: 94820000
-    m_LastClickedID: 33428
-    m_ExpandedIDs: 000000008c8200008e82000090820000928200009482000096820000988200009a8200009c8200009e820000a0820000a2820000a4820000a6820000a8820000aa820000c8820000d082000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 6a7e0000
+    m_LastClickedID: 32362
+    m_ExpandedIDs: 00000000347e0000367e0000387e00003a7e00003c7e00003e7e0000407e0000427e0000447e0000467e0000487e00004a7e00004c7e00004e7e0000507e0000527e0000547e00006a7e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -612,7 +612,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008c8200008e82000090820000928200009482000096820000988200009a8200009c8200009e820000a0820000a2820000a4820000a6820000a8820000aa820000
+    m_ExpandedIDs: 00000000347e0000367e0000387e00003a7e00003c7e00003e7e0000407e0000427e0000447e0000467e0000487e00004a7e00004c7e00004e7e0000507e0000527e0000547e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -664,7 +664,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 79.400024}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 78
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 205.40001
@@ -752,9 +752,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 3a7f0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 5c5afdff245bfdff6e62fdffb068fdff626dfdff7c6dfdff08a3fdffa2abfdffb4abfdffb6abfdff5cacfdff0cadfdffd2c5fdff48cefdff7ecefdff60cffdff64cffdffead1fdff32e1fdffdaf0fdff86f1fdffbef8fdffeefefdff8e03feffae03feffce13feffa41ffeffec32feffde8cfeff568efeff889afeff8c9afeff929bfeffc0a2feff6ca3feff94aafeffacb0feff3ab5feff5cb5feff42b6feff56bdfeff5abdfeff6cbdfeffdcbdfeffa0c1feffa4c1feffb6c1feffbcc3feff14c7feff18c7feff2ac7feff3ac9feff84d2feffecf0feff12f1feff96f1feff9af1feff68fffeff76fffefffafffefffefffeff1000ffff5803fffffe03ffff3a19ffffbe19ffffc219ffffd419ffff4c1affffe223ffff8e24ffffd22bffff0632ffffae36ffffc836ffff7e49ffff2a4affff7851ffffb657ffff685cffff8a5cffff3873ffffc28dffffc68dffffd88dffff9890ffffb899ffff649affffb2a1fffff0a7ffffa4acffffc6acffff74e7ffff34ecffff20effffffafafffff4ffffffec890000bc9000008891000028d7000032d7000054d70000ae6f0100648b0100b48b010018900100c69001000e9d0100229d0100c4a60100e8a60100
+      m_ExpandedIDs: fafaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
